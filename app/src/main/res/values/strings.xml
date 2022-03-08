@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">BusTrace</string>
+    <string name="email">Correo</string>
+    <string name="password">Contraseña</string>
+    <string name="btn_login">Ingresar</string>
+    <string name="password_forgotten">¿Olvidaste tu contraseña?</string>
+    <string name="sign_in">Registrarse</string>
+    <string name="SignIn">Regístrate</string>
+    <string name="name">Nombre</string>
+    <string name="confirm_password">Confirmar contraseña</string>
+    <string name="btn_register">Registrar</string>
+    <string name="account_created">¿Ya tienes una cuenta? Ingresa aquí</string>
+    <string name="recover_password">Recuperar contraseña</string>
+    <string name="btn_code">Enviar código</string>
 </resources>
