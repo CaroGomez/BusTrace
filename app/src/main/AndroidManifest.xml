@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BusTrace">
         <activity
+            android:name=".route_details"
+            android:exported="false" />
+        <activity
+            android:name=".user_menu"
+            android:exported="false" />
+        <activity
+            android:name=".driver_menu"
+            android:exported="false" />
+        <activity
             android:name=".RecoverPassword"
             android:exported="false" />
         <activity
