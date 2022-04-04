@@ -12,4 +12,10 @@
     <string name="account_created">¿Ya tienes una cuenta? Ingresa aquí</string>
     <string name="recover_password">Recuperar contraseña</string>
     <string name="btn_code">Enviar código</string>
+    <string name="welcome_driver">Bienvenido conductor</string>
+    <string name="welcome_user">Bienvenido Usuario</string>
+    <string name="btn_rute1">Ruta 1</string>
+    <string name="btn_rute2">Ruta 2</string>
+    <string name="btn_rute3">Ruta 3</string>
+    <string name="btn_rute4">Ruta 4</string>
 </resources>
