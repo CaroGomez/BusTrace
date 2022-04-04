@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "333797049618",
+    "project_id": "bustrace-d9653",
+    "storage_bucket": "bustrace-d9653.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:333797049618:android:9ae68b7032ea969e3cdfcb",
+        "android_client_info": {
+          "package_name": "co.edu.udea.compumovil.gr05_20212.bustrace"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "333797049618-7of4t6notikde23d9c7clvv5acp3q0mg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "co.edu.udea.compumovil.gr05_20212.bustrace",
+            "certificate_hash": "efb32a9014502c1858c776c7daacbd7b6ef028c6"
+          }
+        },
+        {
+          "client_id": "333797049618-35k0uchqcnrj29m720ik3r5n5i2hpk82.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDoiJteZdKZyTk38haKobLUr-el7fnxooc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "333797049618-35k0uchqcnrj29m720ik3r5n5i2hpk82.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
