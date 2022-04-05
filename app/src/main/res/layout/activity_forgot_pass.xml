@@ -4,7 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RecoverPassword">
+    tools:context=".ForgotPassActivity">
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="365dp"
+        android:layout_height="29dp"
+        tools:layout_editor_absoluteX="31dp"
+        tools:layout_editor_absoluteY="8dp"
+        android:visibility="gone"
+        android:indeterminate="true"
+        />
 
     <TextView
         android:id="@+id/recoverPassword"
@@ -21,7 +32,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.903"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/idRecoveryEmail"
@@ -51,8 +62,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/idRecoveryEmail"
+        app:layout_constraintTop_toBottomOf="@+id/txtEmail"
         app:layout_constraintVertical_bias="0.397" />
+
 
     <ImageView
         android:id="@+id/imageView"
