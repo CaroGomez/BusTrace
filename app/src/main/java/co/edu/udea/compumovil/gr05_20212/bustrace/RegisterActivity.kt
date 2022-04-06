@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.text.TextUtils
 import android.view.View
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
@@ -22,6 +23,7 @@ class RegisterActivity : AppCompatActivity() {
     private lateinit var dbReference:DatabaseReference
     private lateinit var database:FirebaseDatabase
     private lateinit var auth:FirebaseAuth
+    private lateinit var home: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,16 +32,24 @@ class RegisterActivity : AppCompatActivity() {
         txtLastName=findViewById(R.id.getLastName)
         txtEmail=findViewById(R.id.getCorreo)
         txtPassword=findViewById(R.id.getConfirmPassword)
-
+        home = findViewById(R.id.home)
         progressBar= findViewById(R.id.progressBar)
         database= FirebaseDatabase.getInstance()
         auth= FirebaseAuth.getInstance()
 
         dbReference=database.reference.child("User")
+        home.setOnClickListener(){
+            val intent = Intent (this, LoginActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     fun register(view: View) {
-        createNewAccount()
+        if(txtPassword.length() < 6 ){
+            txtPassword.setError("la contraseña debe ser de mínimo 6 caracteres")
+        }else {
+            createNewAccount()
+        }
     }
 
     private fun createNewAccount(){

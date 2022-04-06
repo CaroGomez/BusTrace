@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.text.TextUtils
 import android.widget.EditText
 import android.view.View
+import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
@@ -15,15 +16,21 @@ class ForgotPassActivity : AppCompatActivity() {
     private lateinit var txtEmail: EditText
     private lateinit var auth: FirebaseAuth
     private lateinit var progressBar: ProgressBar
+    private lateinit var home: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_forgot_pass)
 
-
+        home=findViewById(R.id.home_back)
         txtEmail=findViewById(R.id.txtEmail)
         auth= FirebaseAuth.getInstance()
         progressBar= findViewById(R.id.progressBar)
+
+        home.setOnClickListener(){
+            val intent = Intent (this, LoginActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     fun send(viex: View){

@@ -8,6 +8,7 @@ import android.widget.EditText
 import android.widget.ProgressBar
 import com.google.firebase.auth.FirebaseAuth
 import android.view.View
+import android.widget.ImageView
 import android.widget.Toast
 
 class LoginActivity : AppCompatActivity() {
@@ -17,6 +18,7 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var progressBar: ProgressBar
     private lateinit var auth: FirebaseAuth
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
@@ -25,6 +27,7 @@ class LoginActivity : AppCompatActivity() {
         txtPassword=findViewById(R.id.password)
         progressBar= findViewById(R.id.progressBar)
         auth= FirebaseAuth.getInstance()
+
     }
 
     fun forgotPassword(view:View){
