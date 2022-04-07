@@ -92,13 +92,15 @@
 
     <TextView
         android:id="@+id/fogottenPassword"
-        android:onClick="forgotPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="48dp"
         android:layout_marginEnd="16dp"
+        android:onClick="forgotPassword"
         android:text="@string/password_forgotten"
+        android:textAllCaps="false"
+        android:textColor="#2196F3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
@@ -112,6 +114,7 @@
         android:layout_marginEnd="16dp"
         android:onClick="register"
         android:text="@string/sign_in"
+        android:textColor="#2196F3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"

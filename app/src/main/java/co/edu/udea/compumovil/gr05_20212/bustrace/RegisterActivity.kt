@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
+import android.view.Gravity
 import android.view.View
 import android.widget.EditText
 import android.widget.ImageView
@@ -38,18 +39,14 @@ class RegisterActivity : AppCompatActivity() {
         auth= FirebaseAuth.getInstance()
 
         dbReference=database.reference.child("User")
-        home.setOnClickListener(){
+        home.setOnClickListener {
             val intent = Intent (this, LoginActivity::class.java)
             startActivity(intent)
         }
     }
 
     fun register(view: View) {
-        if(txtPassword.length() < 6 ){
-            txtPassword.setError("la contraseña debe ser de mínimo 6 caracteres")
-        }else {
-            createNewAccount()
-        }
+        createNewAccount()
     }
 
     private fun createNewAccount(){
@@ -58,7 +55,7 @@ class RegisterActivity : AppCompatActivity() {
         val email:String=txtEmail.text.toString()
         val password:String=txtPassword.text.toString()
 
-        if (!TextUtils.isEmpty(name) && !TextUtils.isEmpty(lastName) && !TextUtils.isEmpty(email) && !TextUtils.isEmpty(password)){
+        if (!TextUtils.isEmpty(name) && !TextUtils.isEmpty(lastName) && !TextUtils.isEmpty(email) && !TextUtils.isEmpty(password) && txtPassword.length()>=6){
                 progressBar.visibility=View.VISIBLE
 
             auth.createUserWithEmailAndPassword(email, password)
@@ -73,10 +70,37 @@ class RegisterActivity : AppCompatActivity() {
 
                         userBD?.child("Name")?.setValue(name)
                         userBD?.child("Last Name")?.setValue(lastName)
+                        val toast = Toast.makeText(this, "Usuario registrado con éxito.", Toast.LENGTH_SHORT)
+                        toast.setGravity(Gravity.CENTER, 0, 0)
+                        toast.show()
                         action()
                     }
                 }
         }
+        else if(TextUtils.isEmpty(name) || TextUtils.isEmpty(lastName) || TextUtils.isEmpty(email) || TextUtils.isEmpty(password)){
+            if (TextUtils.isEmpty(name)){
+                txtName.error = "El nombre no puede estar vacio."
+            }
+            if (TextUtils.isEmpty(lastName)){
+                txtLastName.setError("El apellido no puede estar vacio.")
+            }
+            if (TextUtils.isEmpty(email)){
+                txtEmail.setError("El correo no puede estar vacio.")
+            }
+            if (TextUtils.isEmpty(password)){
+                txtPassword.setError("La contraseña no puede estar vacia.")
+            }
+            val toast = Toast.makeText(this, "Los campos no pueden estar vacios.", Toast.LENGTH_LONG)
+            toast.setGravity(Gravity.TOP, 0, 0)
+            toast.show()
+        }
+        else{
+            txtPassword.setError("La contraseña debe tener mas de 6 digitos.")
+            val toast = Toast.makeText(this, "La contraseña debe tener 6 digitos.", Toast.LENGTH_LONG)
+            toast.setGravity(Gravity.TOP, 0, 0)
+            toast.show()
+        }
+
 
     }
     private fun action(){

@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
+import android.view.Gravity
 import android.widget.EditText
 import android.view.View
 import android.widget.ImageView
@@ -33,22 +34,30 @@ class ForgotPassActivity : AppCompatActivity() {
         }
     }
 
-    fun send(viex: View){
+    fun send(view: View) {
         val email=txtEmail.text.toString()
 
         if (!TextUtils.isEmpty(email)){
             auth.sendPasswordResetEmail(email)
                 .addOnCompleteListener(this){
                     task->
-
                     if(task.isSuccessful){
                         progressBar.visibility=View.VISIBLE
+                        val toast = Toast.makeText(this, "Email de recuperación enviado con éxito. Por favor reestablezca la contraseña en su correo.", Toast.LENGTH_SHORT)
+                        toast.setGravity(Gravity.CENTER, 0, 0)
+                        toast.show()
                         startActivity(Intent(this, LoginActivity::class.java))
                     }
                     else{
-                        Toast.makeText(this, "Error al enviar el email", Toast.LENGTH_LONG).show()
+                        Toast.makeText(this, "Email no registrado en la base de datos.", Toast.LENGTH_LONG).show()
                     }
                 }
+        }
+        else{
+            txtEmail.setError("El correo no puede estar vacio.")
+            val toast = Toast.makeText(this, "Los campos no pueden estar vacios.", Toast.LENGTH_LONG)
+            toast.setGravity(Gravity.TOP, 0, 0)
+            toast.show()
         }
     }
 }
