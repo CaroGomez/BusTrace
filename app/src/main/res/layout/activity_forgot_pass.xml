@@ -15,7 +15,7 @@
         tools:layout_editor_absoluteY="8dp"
         android:visibility="gone"
         android:indeterminate="true"
-        />
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/recoverPassword"
@@ -50,8 +50,8 @@
         app:layout_constraintTop_toBottomOf="@+id/recoverPassword" />
 
     <Button
-        android:onClick="send"
         android:id="@+id/btn_recovery"
+        android:onClick="send"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -66,4 +66,14 @@
         app:layout_constraintTop_toBottomOf="@+id/txtEmail"
         app:layout_constraintVertical_bias="0.397" />
 
+
+    <ImageView
+        android:id="@+id/home_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_home" />
 </androidx.constraintlayout.widget.ConstraintLayout>
