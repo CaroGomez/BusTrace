@@ -2,165 +2,195 @@
   "geocoded_waypoints" : [
     {
       "geocoder_status" : "OK",
-      "place_id" : "ChIJea1jCM-DRo4RHfRZ__2eZIo",
-      "types" : [ "street_address" ]
+      "place_id" : "ChIJuYCMOKiDRo4RJb74v8QMtC4",
+      "types" : [
+        "establishment",
+        "hardware_store",
+        "locksmith",
+        "point_of_interest",
+        "store"
+      ]
     },
     {
       "geocoder_status" : "OK",
-      "place_id" : "ChIJw76AzpGDRo4RxDB3rKwPcyM",
-      "types" : [ "establishment", "gym", "health", "point_of_interest" ]
+      "place_id" : "ChIJi0wuNbaDRo4R_U0438j8Yj8",
+      "types" : [ "street_address" ]
     }
   ],
   "routes" : [
     {
       "bounds" : {
         "northeast" : {
-          "lat" : 6.158306199999999,
-          "lng" : -75.60611519999999
+          "lat" : 6.1621719,
+          "lng" : -75.596334
         },
         "southwest" : {
-          "lat" : 6.154785,
-          "lng" : -75.6093743
+          "lat" : 6.1548395,
+          "lng" : -75.6043071
         }
       },
       "copyrights" : "Map data ©2022",
       "legs" : [
         {
           "distance" : {
-            "text" : "0,7 km",
-            "value" : 664
+            "text" : "1,8 km",
+            "value" : 1791
           },
           "duration" : {
-            "text" : "3 min",
-            "value" : 150
+            "text" : "6 min",
+            "value" : 339
           },
-          "end_address" : "Cl. 61 Sur ##43a 67, Sabaneta, Antioquia, Colombia",
+          "end_address" : "Cl 48C Sur #40, Envigado, Antioquia, Colombia",
           "end_location" : {
-            "lat" : 6.1551465,
-            "lng" : -75.6093743
+            "lat" : 6.1589551,
+            "lng" : -75.596334
           },
-          "start_address" : "Cra. 44 #35, Sabaneta, Antioquia, Colombia",
+          "start_address" : "Cra. 40b #55 SUR 33, Sabaneta, Antioquia, Colombia",
           "start_location" : {
-            "lat" : 6.158306199999999,
-            "lng" : -75.60611519999999
+            "lat" : 6.154954699999999,
+            "lng" : -75.60409249999999
           },
           "steps" : [
             {
               "distance" : {
-                "text" : "0,2 km",
-                "value" : 168
+                "text" : "15 m",
+                "value" : 15
               },
               "duration" : {
                 "text" : "1 min",
-                "value" : 39
+                "value" : 5
               },
               "end_location" : {
-                "lat" : 6.157298099999999,
-                "lng" : -75.60713989999999
+                "lat" : 6.1548395,
+                "lng" : -75.60401419999999
               },
-              "html_instructions" : "Dirígete hacia el \u003cb\u003eoeste\u003c/b\u003e en \u003cb\u003eCra. 44\u003c/b\u003e hacia \u003cb\u003eCl. 57 Sur\u003c/b\u003e",
+              "html_instructions" : "Dirígete hacia el \u003cb\u003esureste\u003c/b\u003e en \u003cb\u003eCl 56 Sur\u003c/b\u003e hacia \u003cb\u003eCra. 40b\u003c/b\u003e",
               "polyline" : {
-                "points" : "mxqd@fymlMFZBP@J@F@BDHJJTPDBTN\\THFr@ZVN"
+                "points" : "mcqd@plmlMTO"
               },
               "start_location" : {
-                "lat" : 6.158306199999999,
-                "lng" : -75.60611519999999
+                "lat" : 6.154954699999999,
+                "lng" : -75.60409249999999
               },
               "travel_mode" : "DRIVING"
             },
             {
               "distance" : {
                 "text" : "0,1 km",
-                "value" : 100
+                "value" : 108
               },
               "duration" : {
                 "text" : "1 min",
-                "value" : 33
+                "value" : 32
               },
               "end_location" : {
-                "lat" : 6.1565669,
-                "lng" : -75.60662250000001
+                "lat" : 6.155569,
+                "lng" : -75.60337559999999
               },
-              "html_instructions" : "Gira a la \u003cb\u003eizquierda\u003c/b\u003e hacia \u003cb\u003eCl. 57 Sur\u003c/b\u003e",
+              "html_instructions" : "Gira a la \u003cb\u003eizquierda\u003c/b\u003e hacia \u003cb\u003eCra. 40b\u003c/b\u003e",
               "maneuver" : "turn-left",
               "polyline" : {
-                "points" : "crqd@r_nlMPOPONKRMb@Ud@W"
+                "points" : "wbqd@`lmlMa@Wa@YYWEEUWWU"
               },
               "start_location" : {
-                "lat" : 6.157298099999999,
-                "lng" : -75.60713989999999
+                "lat" : 6.1548395,
+                "lng" : -75.60401419999999
               },
               "travel_mode" : "DRIVING"
             },
             {
               "distance" : {
                 "text" : "0,3 km",
-                "value" : 314
+                "value" : 310
+              },
+              "duration" : {
+                "text" : "1 min",
+                "value" : 68
+              },
+              "end_location" : {
+                "lat" : 6.1580352,
+                "lng" : -75.6043071
+              },
+              "html_instructions" : "Gira a la \u003cb\u003eizquierda\u003c/b\u003e hacia \u003cb\u003eCl. 53C Sur\u003c/b\u003e",
+              "maneuver" : "turn-left",
+              "polyline" : {
+                "points" : "igqd@bhmlMc@?G?W?K?K@G@E@e@PCRCJEFEBGBK@M@k@Fo@H{BZEBABC@C@GBSPc@\\"
+              },
+              "start_location" : {
+                "lat" : 6.155569,
+                "lng" : -75.60337559999999
+              },
+              "travel_mode" : "DRIVING"
+            },
+            {
+              "distance" : {
+                "text" : "0,9 km",
+                "value" : 930
+              },
+              "duration" : {
+                "text" : "2 min",
+                "value" : 137
+              },
+              "end_location" : {
+                "lat" : 6.1621719,
+                "lng" : -75.59756899999999
+              },
+              "html_instructions" : "Gira a la \u003cb\u003ederecha\u003c/b\u003e hacia \u003cb\u003eCra. 43A\u003c/b\u003e",
+              "maneuver" : "turn-right",
+              "polyline" : {
+                "points" : "wvqd@|mmlMyC{AeAi@YQk@_@QUKOISQu@G_@G_@K_@MWSWY[Y[S[S]GMGQ?CEUC]CSKgAEoBGa@M]Q_@_@w@?Q?Q@MDWC_@CIEIEMc@]]SUMEGCAGIKOCG]k@c@y@"
+              },
+              "start_location" : {
+                "lat" : 6.1580352,
+                "lng" : -75.6043071
+              },
+              "travel_mode" : "DRIVING"
+            },
+            {
+              "distance" : {
+                "text" : "88 m",
+                "value" : 88
+              },
+              "duration" : {
+                "text" : "1 min",
+                "value" : 36
+              },
+              "end_location" : {
+                "lat" : 6.1617438,
+                "lng" : -75.5969104
+              },
+              "html_instructions" : "Gira a la \u003cb\u003ederecha\u003c/b\u003e hacia \u003cb\u003eCl 48C Sur\u003c/b\u003e",
+              "maneuver" : "turn-right",
+              "polyline" : {
+                "points" : "qprd@xcllMl@wAPUHIJK"
+              },
+              "start_location" : {
+                "lat" : 6.1621719,
+                "lng" : -75.59756899999999
+              },
+              "travel_mode" : "DRIVING"
+            },
+            {
+              "distance" : {
+                "text" : "0,3 km",
+                "value" : 340
               },
               "duration" : {
                 "text" : "1 min",
                 "value" : 61
               },
               "end_location" : {
-                "lat" :6.155758,
-                "lng" :  -75.607279
+                "lat" : 6.1589551,
+                "lng" : -75.596334
               },
-              "html_instructions" : "Gira a la \u003cb\u003ederecha\u003c/b\u003e hacia \u003cb\u003eCra. 43A\u003c/b\u003e",
-              "maneuver" : "turn-right",
+              "html_instructions" : "En la rotonda, toma la \u003cb\u003eprimera\u003c/b\u003e salida y continúa por \u003cb\u003eCl 48C Sur\u003c/b\u003e",
+              "maneuver" : "roundabout-right",
               "polyline" : {
-                "points" : "qmqd@j|mlMHPFNFJ@@JJLLLHLDh@Pf@XHFJN\\f@^l@?JHNHVP\\RZ@?JPd@p@"
+                "points" : "{mrd@t_llM?@@??@@?@??@@?@?@?@??A@?@??A@??A@??A@AF@HBJBJBF@BBD@B@F?H?F?FAHCDCBAJOp@[p@YNGNGVKVMJEJ?FAF?ZFTDJ@~A?JIJI"
               },
               "start_location" : {
-                "lat" :6.157669,
-                "lng" :-75.609336
-              },
-              "travel_mode" : "DRIVING"
-            },
-            {
-              "distance" : {
-                "text" : "82 m",
-                "value" : 82
-              },
-              "duration" : {
-                "text" : "1 min",
-                "value" : 17
-              },
-              "end_location" : {
-                "lat" : 6.157664,
-                "lng" : -75.609322
-              },
-              "html_instructions" : "Gira a la \u003cb\u003ederecha\u003c/b\u003e hacia \u003cb\u003eCl. 61 Sur\u003c/b\u003e\u003cdiv style=\"font-size:0.9em\"\u003eEl destino está a la izquierda.\u003c/div\u003e",
-              "maneuver" : "turn-right",
-              "polyline" : {
-                "points" : "kbqd@pinlMu@|AMVEH"
-              },
-              "start_location" : {
-                "lat" : 6.155758,
-                "lng" : -75.607279
-              },
-              "travel_mode" : "DRIVING"
-            },
-            {
-              "distance" : {
-                "text" : "82 m",
-                "value" : 82
-              },
-              "duration" : {
-                "text" : "1 min",
-                "value" : 17
-              },
-              "end_location" : {
-                "lat" :6.155925,
-                "lng" :-75.612337
-              },
-              "html_instructions" : "Gira a la \u003cb\u003ederecha\u003c/b\u003e hacia \u003cb\u003eCl. 61 Sur\u003c/b\u003e\u003cdiv style=\"font-size:0.9em\"\u003eEl destino está a la izquierda.\u003c/div\u003e",
-              "maneuver" : "turn-right",
-              "polyline" : {
-                "points" : "kbqd@pinlMu@|AMVEH"
-              },
-              "start_location" : {
-                "lat" : 6.157664,
-                "lng" : -75.609322
+                "lat" : 6.1617438,
+                "lng" : -75.5969104
               },
               "travel_mode" : "DRIVING"
             }
@@ -170,9 +200,9 @@
         }
       ],
       "overview_polyline" : {
-        "points" : "mxqd@fymlMN`AFL`@\\bAp@jAj@b@_@lBgAZn@XXZNh@Pf@XTV\\f@^l@?JRf@d@x@LPd@p@u@|AS`@"
+        "points" : "mcqd@plmlMTOa@W{@q@[]WUc@?_@?W@MBe@PCRIRMFuBT{BZEBEDcAt@_FeCeAq@]e@ISQu@O_AK_@MWSWs@w@g@y@O_@MkAKgAEoBU_Aq@wA?c@Fe@Gi@KWc@]]S[UKKqA}Bl@wAPUTU?@B@D@FABE@Ah@LTH`@ANGNQbCeAn@YVENAp@LjB@VS"
       },
-      "summary" : "Cra. 44 y Cra. 43A",
+      "summary" : "Cra. 43A",
       "warnings" : [],
       "waypoint_order" : []
     }

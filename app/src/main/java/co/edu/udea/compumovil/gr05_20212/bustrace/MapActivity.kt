@@ -16,6 +16,7 @@ import com.google.android.gms.maps.model.PolylineOptions
 import kotlinx.coroutines.Dispatchers.Main
 import com.beust.klaxon.*
 import com.google.android.gms.maps.model.LatLngBounds
+import com.google.maps.android.PolyUtil
 import kotlinx.coroutines.*
 import kotlinx.coroutines.Dispatchers.Default
 import java.io.IOException
@@ -47,15 +48,16 @@ class MapActivity : AppCompatActivity(),OnMapReadyCallback {
 
     private  fun createMarker() {
         val LatLongB = LatLngBounds.Builder()
-        val origin = LatLng(6.1582966,-75.6060953)
-        val destination = LatLng(6.1551013,-75.6093979)
-        map!!.addMarker(MarkerOptions().position(origin).title("Marker in Sydney"))
-        map!!.addMarker(MarkerOptions().position(destination).title("Marker in Opera"))
-        val url = getURL(origin,destination)
+        val origin = LatLng(6.1549805,-75.6040541)
+        val destination = LatLng(6.1588622,-75.5997927)
+        val waypoints= arrayListOf(LatLng(6.1589637,-75.5963223))
+        map!!.addMarker(MarkerOptions().position(origin).title("Start Point"))
+        map!!.addMarker(MarkerOptions().position(destination).title("End Point"))
+        val url = getURL(origin,destination,waypoints)
         val options = createPolyLine()
         GlobalScope.launch(Dispatchers.IO) {
             var  result = URL(url).readText()
-            //var result = read_json()
+           //var result = read_json()
             withContext(Dispatchers.Main){
 
                 val parser: Parser = Parser()
@@ -63,9 +65,9 @@ class MapActivity : AppCompatActivity(),OnMapReadyCallback {
                 val json: JsonObject = parser.parse(stringBuilder) as JsonObject
                 // get to the correct element in JsonObject
                 val routes = json.array<JsonObject>("routes")
-                val points = routes!!["legs"]["steps"][0] as JsonArray<JsonObject>
-                // For every element in the JsonArray, decode the polyline string and pass all points to a List
-                val polypts = points.flatMap { decodePoly(it.obj("polyline")?.string("points")!!)  }
+
+                val encodedPoints = routes!!["overview_polyline"]["points"][0].toString()
+                val polypts = PolyUtil.decode(encodedPoints)
                 // Add  points to polyline and bounds
                 options.add(origin)
                 LatLongB.include(origin)
@@ -73,8 +75,8 @@ class MapActivity : AppCompatActivity(),OnMapReadyCallback {
                     options.add(point)
                     LatLongB.include(point)
                 }
-                options.add(destination)
-                LatLongB.include(destination)
+              /*  options.add(destination)
+                LatLongB.include(destination)*/
                 // build bounds
                 val bounds = LatLongB.build()
                 // add polyline to the map
@@ -110,50 +112,17 @@ class MapActivity : AppCompatActivity(),OnMapReadyCallback {
         }
         return json
     }
-    private fun getURL(from : LatLng, to : LatLng) : String {
+    private fun getURL(from : LatLng, to : LatLng,wayPoints:List<LatLng>) : String {
         val origin = "origin=" + from.latitude + "," + from.longitude
         val dest = "destination=" + to.latitude + "," + to.longitude
         val sensor = "sensor=false"
         val key = "key="+getString(R.string.google_maps_key)
-        val params = "$origin&$dest&$sensor&$key"
+        var waypoints = "waypoints="
+        wayPoints.map { waypoints= waypoints + it.latitude +","+it.longitude + "|"}
+        waypoints = waypoints.dropLast(1)
+        val params = "$origin&$dest&$sensor&$waypoints&$key"
         return "https://maps.googleapis.com/maps/api/directions/json?$params"
     }
 
-    private fun decodePoly(encoded: String): List<LatLng> {
-        val poly = ArrayList<LatLng>()
-        var index = 0
-        val len = encoded.length
-        var lat = 0
-        var lng = 0
-
-        while (index < len) {
-            var b: Int
-            var shift = 0
-            var result = 0
-            do {
-                b = encoded[index++].toInt() - 63
-                result = result or (b and 0x1f shl shift)
-                shift += 5
-            } while (b >= 0x20)
-            val dlat = if (result and 1 != 0) (result shr 1).inv() else result shr 1
-            lat += dlat
-
-            shift = 0
-            result = 0
-            do {
-                b = encoded[index++].toInt() - 63
-                result = result or (b and 0x1f shl shift)
-                shift += 5
-            } while (b >= 0x20)
-            val dlng = if (result and 1 != 0) (result shr 1).inv() else result shr 1
-            lng += dlng
-
-            val p = LatLng(lat.toDouble() / 1E5,
-                lng.toDouble() / 1E5)
-            poly.add(p)
-        }
-
-        return poly
-    }
 
 }
