@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BusTrace">
         <activity
-            android:name=".LoginActivity"
+            android:name=".user_menu"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,7 +27,7 @@
             android:name=".route_details"
             android:exported="false" />
         <activity
-            android:name=".user_menu"
+            android:name=".LoginActivity"
             android:exported="false" />
         <activity
             android:name=".driver_menu"
