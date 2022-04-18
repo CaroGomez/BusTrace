@@ -7,7 +7,7 @@
     tools:context=".route_details">
 
     <TextView
-        android:id="@+id/welcome_user2"
+        android:id="@+id/route"
         android:layout_width="352dp"
         android:layout_height="74dp"
         android:layout_marginStart="30dp"
@@ -21,6 +21,7 @@
         android:textSize="48sp"
         app:layout_constraintBottom_toTopOf="@+id/ruta1_name"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -39,7 +40,7 @@
         app:layout_constraintBottom_toTopOf="@+id/ruta1_schedule"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/welcome_user2" />
+        app:layout_constraintTop_toBottomOf="@+id/route" />
 
     <TextView
         android:id="@+id/ruta1_schedule"

@@ -22,6 +22,9 @@ class user_menu : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_user_menu)
 
+        var consultas = Consultas()
+        consultas.getRoutes()
+
         /*route1 = findViewById(R.id.btn_rute1)
         route1.setOnClickListener(){
             val intent = Intent (this, route_details::class.java)
