@@ -1,10 +1,13 @@
 package co.edu.udea.compumovil.gr05_20212.bustrace
 
+import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Parcel
 import android.os.Parcelable
+import android.view.Menu
+import android.view.MenuItem
 import com.google.android.gms.maps.CameraUpdateFactory
 
 import com.google.android.gms.maps.GoogleMap
@@ -16,6 +19,7 @@ import com.google.android.gms.maps.model.PolylineOptions
 import kotlinx.coroutines.Dispatchers.Main
 import com.beust.klaxon.*
 import com.google.android.gms.maps.model.LatLngBounds
+import com.google.firebase.auth.FirebaseAuth
 import com.google.maps.android.PolyUtil
 import kotlinx.coroutines.*
 import kotlinx.coroutines.Dispatchers.Default
@@ -27,15 +31,28 @@ import java.net.URL
 
 class MapActivity : AppCompatActivity(),OnMapReadyCallback {
     private lateinit var  map:GoogleMap
-
+    private lateinit var user: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_map)
-
+        MyToolbar().show(this, "Mapa de la ruta", true)
+        user= FirebaseAuth.getInstance()
         CreateFragment()
     }
+    override fun onCreateOptionsMenu (menu: Menu?) : Boolean {
+        menuInflater.inflate(R.menu.menu_contextual, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if(item.itemId==R.id.logout) {
+            user.signOut()
+            startActivity(Intent(this, LoginActivity::class.java))
+            finish()
+        }
+        return super.onOptionsItemSelected(item)
+    }
     private fun  CreateFragment() {
         val mapFragment: SupportMapFragment = supportFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
@@ -57,7 +74,7 @@ class MapActivity : AppCompatActivity(),OnMapReadyCallback {
         val options = createPolyLine()
         GlobalScope.launch(Dispatchers.IO) {
             var  result = URL(url).readText()
-           //var result = read_json()
+            //var result = read_json()
             withContext(Dispatchers.Main){
 
                 val parser: Parser = Parser()
@@ -75,8 +92,8 @@ class MapActivity : AppCompatActivity(),OnMapReadyCallback {
                     options.add(point)
                     LatLongB.include(point)
                 }
-              /*  options.add(destination)
-                LatLongB.include(destination)*/
+                /*  options.add(destination)
+                  LatLongB.include(destination)*/
                 // build bounds
                 val bounds = LatLongB.build()
                 // add polyline to the map
@@ -86,7 +103,7 @@ class MapActivity : AppCompatActivity(),OnMapReadyCallback {
             }
         }
 
-       // map!!.moveCamera(CameraUpdateFactory.newLatLng(sydney))
+        // map!!.moveCamera(CameraUpdateFactory.newLatLng(sydney))
     }
 
 

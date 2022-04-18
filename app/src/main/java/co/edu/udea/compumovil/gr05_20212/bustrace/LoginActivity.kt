@@ -1,11 +1,12 @@
 package co.edu.udea.compumovil.gr05_20212.bustrace
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
 import android.util.Log
-import android.view.Gravity
-import android.view.View
+import android.view.*
+import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import android.widget.ProgressBar
 import android.widget.Toast
@@ -28,6 +29,8 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
+        MyToolbar().show(this, "Login", false)
+
         txtUser=findViewById(R.id.email)
         txtPassword=findViewById(R.id.password)
         progressBar= findViewById(R.id.progressBar)
@@ -47,6 +50,9 @@ class LoginActivity : AppCompatActivity() {
 
 
     }
+    override fun onBackPressed() {
+
+    }
 
     fun forgotPassword(view:View){
         startActivity(Intent(this, ForgotPassActivity::class.java))
@@ -55,8 +61,15 @@ class LoginActivity : AppCompatActivity() {
         startActivity(Intent(this, RegisterActivity::class.java))
     }
     fun login(view:View){
+        if (view !=null){
+            val hideMe=getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            hideMe.hideSoftInputFromWindow(view.windowToken, 0)
+        }
+        window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN)
         loginUser()
     }
+
+
 
     private fun loginUser(){
         val user:String=txtUser.text.toString()

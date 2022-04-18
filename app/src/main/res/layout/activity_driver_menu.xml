@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".driver_menu">
-
+    <include layout="@layout/my_toolbar"/>
     <TextView
         android:id="@+id/welcome_driver"
         android:layout_width="335dp"

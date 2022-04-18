@@ -1,5 +1,6 @@
 package co.edu.udea.compumovil.gr05_20212.bustrace
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,6 +8,8 @@ import android.text.TextUtils
 import android.view.Gravity
 import android.widget.EditText
 import android.view.View
+import android.view.WindowManager
+import android.view.inputmethod.InputMethodManager
 import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.Toast
@@ -22,19 +25,22 @@ class ForgotPassActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_forgot_pass)
+        MyToolbar().show(this, "Recuperar Contraseña", true)
 
-        home=findViewById(R.id.home_back)
+
+
         txtEmail=findViewById(R.id.txtEmail)
         auth= FirebaseAuth.getInstance()
         progressBar= findViewById(R.id.progressBar)
 
-        home.setOnClickListener(){
-            val intent = Intent (this, LoginActivity::class.java)
-            startActivity(intent)
-        }
     }
 
     fun send(view: View) {
+        if (view !=null){
+            val hideMe=getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            hideMe.hideSoftInputFromWindow(view.windowToken, 0)
+        }
+        window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN)
         val email=txtEmail.text.toString()
 
         if (!TextUtils.isEmpty(email)){
