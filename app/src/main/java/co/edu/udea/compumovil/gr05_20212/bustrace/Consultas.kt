@@ -1,34 +1,40 @@
 package co.edu.udea.compumovil.gr05_20212.bustrace
 
+
 import android.util.Log
-import android.widget.Toast
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ktx.database
-import com.google.firebase.ktx.Firebase
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+
 
 class Consultas {
     private lateinit var database: DatabaseReference
 
 
-    fun getRoutes(): List<Route> {
-
-        var routes: List<Route> = listOf()
+    suspend fun getRoutes(): MutableList<Route> {
+        val routes: MutableList<Route> = mutableListOf()
         database = FirebaseDatabase.getInstance().getReference("Routes")
-        database.get().addOnSuccessListener {
-            if(it.exists()){
+        val job = GlobalScope.launch {
+            database.get().addOnSuccessListener {
                 for (route in it.children) {
-                    var routeToAdd = Route(route.child("id").value.toString(), route.child("nombre").value.toString())
-                    routes.toMutableList().add(routeToAdd)
+                    var routeToAdd = Route()
+                    routeToAdd.id = route.child("id").value.toString()
+                    routeToAdd.name = route.child("nombre").value.toString()
+                    routes.add(routeToAdd)
+                    Log.i("Test", routeToAdd.name);
                 }
             }
         }
-
+        job.join()
+        delay(3000L)
+        Log.i("Test", routes.toString());
         return routes
     }
 
-    fun getRoutebyId(id: String): Route {
-        var route: Route = Route("",  "");
+    suspend fun getRoutebyId(id: String): Route {
+        var route: Route = Route();
         database = FirebaseDatabase.getInstance().getReference("Routes")
         database.child(id).get().addOnSuccessListener {
             if(it.exists()){
@@ -40,13 +46,21 @@ class Consultas {
                 val description = it.child("descripcion").value.toString()
                 val wayPoints = it.child("way_points").value.toString()
 
-                route = Route(name, destinationLat, destinationLon, originLat, originLon, description,wayPoints)
+                route = Route()
+                route.name = name
+                route.destinationLat = destinationLat
+                route.destinationLon = destinationLon
+                route.originLat = originLat
+                route.originLon = originLon
+                route.description = description
+                route.wayPoints = wayPoints
             }else {
 
             }
         }.addOnFailureListener(){
 
         }
+        delay(1000L)
         return route
     }
 

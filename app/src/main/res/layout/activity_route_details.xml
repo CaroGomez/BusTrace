@@ -7,57 +7,36 @@
     tools:context=".route_details">
 
     <TextView
-        android:id="@+id/route"
-        android:layout_width="352dp"
-        android:layout_height="74dp"
-        android:layout_marginStart="30dp"
+        android:id="@+id/routename"
+        android:layout_width="335dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="35dp"
         android:layout_marginTop="91dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="17dp"
+        android:layout_marginEnd="35dp"
         android:fontFamily="@font/roboto_medium"
         android:gravity="center"
-        android:text="@string/btn_rute1"
         android:textColor="@color/black"
         android:textSize="48sp"
-        app:layout_constraintBottom_toTopOf="@+id/ruta1_name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/ruta1_name"
-        android:layout_width="340dp"
-        android:layout_height="55dp"
+        android:id="@+id/route_description"
+        android:layout_width="341dp"
+        android:layout_height="292dp"
         android:layout_marginStart="35dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="35dp"
-        android:layout_marginBottom="39dp"
         android:fontFamily="@font/roboto_medium"
         android:gravity="center"
-        android:text="R4 001 (TPC Itagüí)"
         android:textColor="@color/black"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/ruta1_schedule"
+        android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/route" />
-
-    <TextView
-        android:id="@+id/ruta1_schedule"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="35dp"
-        android:layout_marginEnd="35dp"
-        android:layout_marginBottom="61dp"
-        android:fontFamily="@font/roboto_medium"
-        android:gravity="center"
-        android:text="Horario regular de operación: 5:00 - 21:00 \n \n \n Paradas: \n \n Estación Itagüí Buses \n Planta San Fernando \n Centro De La Moda \n Carrera 50, 751 \n Calle 72 \n Canalización \n I.E. Simón Bolívar"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/go_back"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ruta1_name" />
+        app:layout_constraintTop_toBottomOf="@+id/routename" />
 
     <Button
         android:id="@+id/go_back"
@@ -70,7 +49,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/view_map_route"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ruta1_schedule" />
+        app:layout_constraintTop_toBottomOf="@+id/route_description" />
 
     <Button
         android:id="@+id/view_map_route"

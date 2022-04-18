@@ -3,6 +3,7 @@ package co.edu.udea.compumovil.gr05_20212.bustrace
 import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
+import android.util.Log
 import android.view.Gravity
 import android.view.View
 import android.widget.EditText
@@ -10,6 +11,9 @@ import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 
 class LoginActivity : AppCompatActivity() {
@@ -28,6 +32,19 @@ class LoginActivity : AppCompatActivity() {
         txtPassword=findViewById(R.id.password)
         progressBar= findViewById(R.id.progressBar)
         auth= FirebaseAuth.getInstance()
+
+        var consultas = Consultas()
+        GlobalScope.launch(Dispatchers.IO) {
+            var routes = consultas.getRoutes()
+            for (i in routes) {
+                Log.i("Route", i.id)
+                Log.i("Route", i.name)
+            }
+
+            Log.i("RouteById", consultas.getRoutebyId("1").name)
+        }
+
+
 
     }
 
