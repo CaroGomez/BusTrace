@@ -50,6 +50,11 @@ class route_details : AppCompatActivity() {
                 route_description.setText(routes.description)
             }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if(item.itemId==R.id.logout) {
+            user.signOut()
+            startActivity(Intent(this, LoginActivity::class.java))
+            finish()
         }
     }
 }

@@ -14,7 +14,6 @@
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -25,23 +24,29 @@
 
         <activity
             android:name=".route_details"
-            android:exported="false" />
+            android:exported="true"
+                android:parentActivityName=".user_menu">
+        </activity>
         <activity
             android:name=".user_menu"
-            android:exported="false" />
+            android:exported="false"
+            />
         <activity
             android:name=".driver_menu"
             android:exported="false" />
         <activity
             android:name=".ForgotPassActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".LoginActivity"/>
         <activity
             android:name=".RegisterActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".LoginActivity"/>
 
         <activity
             android:name=".MapActivity"
-            android:exported="false">
+            android:exported="false"
+            android:parentActivityName=".route_details">
         </activity>
     </application>
 

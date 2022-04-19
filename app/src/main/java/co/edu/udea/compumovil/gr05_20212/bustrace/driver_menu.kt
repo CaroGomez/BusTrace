@@ -7,5 +7,6 @@ class driver_menu : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_driver_menu)
+        MyToolbar().show(this, "Menú conductor", false)
     }
 }

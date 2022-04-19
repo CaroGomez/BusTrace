@@ -1,11 +1,14 @@
 package co.edu.udea.compumovil.gr05_20212.bustrace
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.Gravity
 import android.view.View
+import android.view.WindowManager
+import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.ProgressBar
@@ -29,23 +32,26 @@ class RegisterActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
+        MyToolbar().show(this, "Registro", true)
+
         txtName=findViewById(R.id.getName)
         txtLastName=findViewById(R.id.getLastName)
         txtEmail=findViewById(R.id.getCorreo)
         txtPassword=findViewById(R.id.getConfirmPassword)
-        home = findViewById(R.id.home)
+
         progressBar= findViewById(R.id.progressBar)
         database= FirebaseDatabase.getInstance()
         auth= FirebaseAuth.getInstance()
 
         dbReference=database.reference.child("User")
-        home.setOnClickListener {
-            val intent = Intent (this, LoginActivity::class.java)
-            startActivity(intent)
-        }
     }
 
     fun register(view: View) {
+        if (view !=null){
+            val hideMe=getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            hideMe.hideSoftInputFromWindow(view.windowToken, 0)
+        }
+        window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN)
         createNewAccount()
     }
 
