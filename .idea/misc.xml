@@ -3,19 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/cayu2/OneDrive/Documentos/GitHub/BusTrace/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.224" />
-        <entry key="..\:/Users/cayu2/OneDrive/Documentos/GitHub/BusTrace/app/src/main/res/drawable/ic_baseline_menu_24.xml" value="0.1" />
-        <entry key="..\:/Users/cayu2/OneDrive/Documentos/GitHub/BusTrace/app/src/main/res/drawable/ic_edit.xml" value="0.224" />
-        <entry key="..\:/Users/cayu2/OneDrive/Documentos/GitHub/BusTrace/app/src/main/res/drawable/ic_email.xml" value="0.224" />
-        <entry key="..\:/Users/cayu2/OneDrive/Documentos/GitHub/BusTrace/app/src/main/res/drawable/ic_home.xml" value="0.224" />
-        <entry key="..\:/Users/cayu2/OneDrive/Documentos/GitHub/BusTrace/app/src/main/res/drawable/ic_launcher_background.xml" value="0.224" />
-        <entry key="..\:/Users/cayu2/OneDrive/Documentos/GitHub/BusTrace/app/src/main/res/drawable/ic_login.xml" value="0.224" />
-        <entry key="..\:/Users/cayu2/OneDrive/Documentos/GitHub/BusTrace/app/src/main/res/drawable/ic_password.xml" value="0.224" />
-        <entry key="..\:/Users/cayu2/OneDrive/Documentos/GitHub/BusTrace/app/src/main/res/layout/action_bar_toolbar.xml" value="0.8924418604651163" />
-        <entry key="..\:/Users/cayu2/OneDrive/Documentos/GitHub/BusTrace/app/src/main/res/layout/action_bbar_toolbar.xml" value="0.2171875" />
-        <entry key="..\:/Users/cayu2/OneDrive/Documentos/GitHub/BusTrace/app/src/main/res/layout/activity_driver_menu.xml" value="0.14666666666666667" />
+        <entry key="..\:/Desarrollo/Proyectos/Android/BusTrace/app/src/main/res/layout/activity_route_details.xml" value="0.4" />
+        <entry key="..\:/Desarrollo/Proyectos/Android/BusTrace/app/src/main/res/layout/activity_user_menu.xml" value="0.3482789855072464" />
+        <entry key="..\:/Users/cayu2/OneDrive/Documentos/GitHub/BusTrace/app/src/main/res/layout/activity_driver_menu.xml" value="0.2171875" />
         <entry key="..\:/Users/cayu2/OneDrive/Documentos/GitHub/BusTrace/app/src/main/res/layout/activity_forgot_pass.xml" value="0.14628623188405798" />
-        <entry key="..\:/Users/cayu2/OneDrive/Documentos/GitHub/BusTrace/app/src/main/res/layout/activity_login.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/cayu2/OneDrive/Documentos/GitHub/BusTrace/app/src/main/res/layout/activity_login.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/cayu2/OneDrive/Documentos/GitHub/BusTrace/app/src/main/res/layout/activity_main.xml" value="0.2171875" />
         <entry key="..\:/Users/cayu2/OneDrive/Documentos/GitHub/BusTrace/app/src/main/res/layout/activity_map.xml" value="0.2171875" />
         <entry key="..\:/Users/cayu2/OneDrive/Documentos/GitHub/BusTrace/app/src/main/res/layout/activity_maps.xml" value="0.1" />
@@ -24,10 +16,6 @@
         <entry key="..\:/Users/cayu2/OneDrive/Documentos/GitHub/BusTrace/app/src/main/res/layout/activity_route_details.xml" value="0.1" />
         <entry key="..\:/Users/cayu2/OneDrive/Documentos/GitHub/BusTrace/app/src/main/res/layout/activity_sign_in.xml" value="0.2171875" />
         <entry key="..\:/Users/cayu2/OneDrive/Documentos/GitHub/BusTrace/app/src/main/res/layout/activity_user_menu.xml" value="0.22" />
-        <entry key="..\:/Users/cayu2/OneDrive/Documentos/GitHub/BusTrace/app/src/main/res/layout/my_toolbar.xml" value="0.2171875" />
-        <entry key="..\:/Users/cayu2/OneDrive/Documentos/GitHub/BusTrace/app/src/main/res/layout/toolbar.xml" value="0.16168478260869565" />
-        <entry key="..\:/Users/cayu2/OneDrive/Documentos/GitHub/BusTrace/app/src/main/res/menu/menu_contextual.xml" value="0.2171875" />
-        <entry key="..\:/Users/cayu2/OneDrive/Documentos/GitHub/BusTrace/app/src/main/res/menu/menu_main.xml" value="0.2171875" />
       </map>
     </option>
   </component>

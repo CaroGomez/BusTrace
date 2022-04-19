@@ -25,6 +25,7 @@ import kotlinx.coroutines.*
 class user_menu : AppCompatActivity() {
     private lateinit var route1: Button
     private lateinit var user: FirebaseAuth
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_user_menu)
