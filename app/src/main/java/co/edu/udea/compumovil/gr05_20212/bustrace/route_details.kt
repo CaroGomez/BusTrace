@@ -37,6 +37,7 @@ class route_details : AppCompatActivity() {
         }
         go_maps.setOnClickListener() {
             val intent = Intent(this, MapActivity::class.java)
+            intent.putExtra("id", idroute)
             startActivity(intent)
         }
         var context: Context = this
